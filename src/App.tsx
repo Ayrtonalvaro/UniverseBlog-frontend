@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import reactLogo from './assets/react.svg'
 import './App.css'
 import Navbar from './components/Navbar/Navbar'
@@ -11,9 +11,12 @@ import Login from './pages/Login/Login'
 import Register from './pages/Register/Register'
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Post from './components/Posts/Post/Post'
+import axios from 'axios'
 
 function App() {
-  const [count, setCount] = useState(0)
+  
+
+  
 
   return (
     <div className="bg-black w-full h-full">
@@ -21,7 +24,7 @@ function App() {
         <Navbar />
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/postPage" element={<PostPage/>} />
+          <Route path="/post/:id" element={<PostPage/>} />
           <Route path="/newPost" element={<NewPost />} />
           <Route path="/register" element={<Register />} />
           <Route path="/login" element={<Login />} />
